@@ -11,12 +11,20 @@ from dotenv import load_dotenv
 # Load API key
 # ---------------------------
 load_dotenv()
-API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Prefer Streamlit Secrets; fall back to environment
+API_KEY = (st.secrets.get("OPENAI_API_KEY")
+           if hasattr(st, "secrets") else None) or os.getenv("OPENAI_API_KEY")
+
 if not API_KEY:
-    st.error("⚠️ OPENAI_API_KEY missing in .env")
+    st.error("⚠️ OPENAI_API_KEY not found. Add it in Streamlit → Settings → Secrets, or in a local .env.")
     st.stop()
 
-client = OpenAI(api_key=API_KEY)
+# Make it available to the OpenAI SDK and anything else that reads env
+os.environ["OPENAI_API_KEY"] = API_KEY
+
+# Initialize the client WITHOUT passing kwargs (SDK reads from env)
+client = OpenAI()
 
 # ---------------------------
 # Streamlit UI
@@ -432,4 +440,5 @@ with right:
 
         except Exception as e:
             st.error(f"API error: {e}")
+
 
