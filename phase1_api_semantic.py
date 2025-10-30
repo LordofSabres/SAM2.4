@@ -26,6 +26,16 @@ os.environ["OPENAI_API_KEY"] = API_KEY
 # Initialize the client WITHOUT passing kwargs (SDK reads from env)
 client = OpenAI()
 
+# ✅ Debug: verify key loads & cloud can call OpenAI
+st.write("🔑 Key loaded (cloud):", bool(API_KEY))
+
+try:
+    client.models.list()
+    st.success("✅ Cloud really connected to OpenAI")
+except Exception as e:
+    st.error(f"❌ Cloud cannot call OpenAI API: {e}")
+
+
 # ---------------------------
 # Streamlit UI
 # ---------------------------
@@ -440,6 +450,7 @@ with right:
 
         except Exception as e:
             st.error(f"API error: {e}")
+
 
 
 
