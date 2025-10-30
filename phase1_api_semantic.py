@@ -31,15 +31,6 @@ client = OpenAI()
 # ---------------------------
 st.set_page_config(page_title="SAM 2.4 — Sarcasm (Semantic Context)", page_icon="🗣️", layout="wide")
 
-# ✅ Debug: verify key loads & cloud can call OpenAI
-st.write("🔑 Key loaded (cloud):", bool(API_KEY))
-
-try:
-    client.models.list()
-    st.success("✅ Cloud really connected to OpenAI")
-except Exception as e:
-    st.error(f"❌ Cloud cannot call OpenAI API: {e}")
-
 st.title("🗣️ SAM (Sarcasm Authentication Machine) 2.4 — Sarcasm Detector")
 
 # ---------------------------
@@ -450,6 +441,7 @@ with right:
 
         except Exception as e:
             st.error(f"API error: {e}")
+
 
 
 
