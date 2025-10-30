@@ -357,7 +357,7 @@ with st.sidebar:
     st.caption(f"OpenAI SDK: {openai.__version__}")
 
     st.divider()
-    st.page_link("1_About_SAM.py", label="About SAM 2.4", icon="📘")
+    st.page_link("pages/1_About_SAM.py", label="About SAM 2.4", icon="📘")
 
 # ---------------------------
 # Layout
@@ -440,5 +440,6 @@ with right:
 
         except Exception as e:
             st.error(f"API error: {e}")
+
 
 
