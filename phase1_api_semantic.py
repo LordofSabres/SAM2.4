@@ -26,6 +26,11 @@ os.environ["OPENAI_API_KEY"] = API_KEY
 # Initialize the client WITHOUT passing kwargs (SDK reads from env)
 client = OpenAI()
 
+# ---------------------------
+# Streamlit UI
+# ---------------------------
+st.set_page_config(page_title="SAM 2.4 — Sarcasm (Semantic Context)", page_icon="🗣️", layout="wide")
+
 # ✅ Debug: verify key loads & cloud can call OpenAI
 st.write("🔑 Key loaded (cloud):", bool(API_KEY))
 
@@ -35,11 +40,6 @@ try:
 except Exception as e:
     st.error(f"❌ Cloud cannot call OpenAI API: {e}")
 
-
-# ---------------------------
-# Streamlit UI
-# ---------------------------
-st.set_page_config(page_title="SAM 2.4 — Sarcasm (Semantic Context)", page_icon="🗣️", layout="wide")
 st.title("🗣️ SAM (Sarcasm Authentication Machine) 2.4 — Sarcasm Detector")
 
 # ---------------------------
@@ -450,6 +450,7 @@ with right:
 
         except Exception as e:
             st.error(f"API error: {e}")
+
 
 
 
