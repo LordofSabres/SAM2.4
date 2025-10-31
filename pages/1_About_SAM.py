@@ -28,14 +28,14 @@ st.markdown(
     "- **Hard markers**: “yeah right”, “as if”, “what could go wrong”, “said no one”."
 )
 
-st.subheader("Version history")
+st.subheader("Development history")
 st.markdown(
-    "- **2.4 (current)** — Working version using OpenAI API as the backend with logic and prompt designed by me.\n"
+    "- **Prototype 2.4 (current)** — Working version using OpenAI API as the backend with logic and prompt designed by me.\n"
     "- **2.3** — Another attempt at Version 2.1 (did not work) \n"
-    "- **2.2** — The TACO app (initial mobile base where the app listens for the word **TACO** and vibrates. Will be given the logic of SAM later.\n"
+    "- **Prototype 2.2** — The TACO app (initial mobile base where the app listens for the word **TACO** and vibrates. Will be given the logic of SAM later.\n"
     "- **2.1** — Attempted training of phrasing from Hugging Face Sarcastic tweets dataset (did not work)\n"
-    "- **2.0** — Made during the hackathon, which utilizes OpenAI and speech to text (shutdown due to lack of credits)\n"
-    "- **1.0** — JAMES (Jovial Autism Machine Exploring Sarcasm) was created using a TJBot for my high school capstone."
+    "- **Prototype 2.0** — Made during the hackathon, which utilizes OpenAI and speech to text (shutdown due to lack of credits)\n"
+    "- **Prototype 1.0** — JAMES (Jovial Autism Machine Exploring Sarcasm) was created using a TJBot for my high school capstone."
 )
 
 st.subheader("The Future")
